@@ -1,22 +1,18 @@
 import React from 'react';
-import Register from "./Auth/Register";
 import Login from "./Auth/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from './Header/Header';
+import Header from './Main/Header/Header';
 
 const App = () => {
   return ( 
     <Router>
-      <Header />
       <Switch>
-        <Route path="/register">
-          <Register />
-        </Route>
         <Route path="/login">
           <Login />
         </Route>
         <Route path="/">
-          Placeholder
+          <Header />
+          Home placeholder
         </Route>
       </Switch>
     </Router>
