@@ -228,8 +228,10 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Acknowledgements
 
+* [Adobe Fonts: Orpheus](https://fonts.adobe.com/fonts/orpheus?mv=affiliate&mv2=red#fonts-section)
 * [Choose an open source license](https://choosealicense.com/)
 * [Coolors.io](coolors.io)
+* [Postmodernist Ipsum](https://www.elsewhere.org/pomo/)
 * [Shields](https://shields.io/)
 
 ## Contact Information
