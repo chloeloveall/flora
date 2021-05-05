@@ -1,73 +1,12 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
-import styled from 'styled-components';
 import '../../index.css';
 import { signInWithGoogle } from "../../firebase";
 import { signInWithGithub } from "../../firebase";
 import { signInWithTwitter } from "../../firebase";
 import { Icon } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
-import LoginImg from '../../img/Asset2.png';
-
-const BodyStyles = styled.body`
-  font-family: 'Montserrat', sans-serif;
-  background: #f5ead8;
-  background-image: url(${LoginImg});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
-
-const Heading1 = styled.h1`
-  font-weight: bold;
-  margin: 0;
-`;
-
-const Paragraph = styled.p`
-  font-size: 14px;
-  font-weight: 100;
-  line-height: 20px;
-  letter-spacing: 0.5px;
-  margin: 20px 0 30px;
-`;
-
-const Span = styled.span`
-  font-size: 12px;
-`;
-
-const Anchor = styled.a`
-  color: #333;
-  font-size: 14px;
-  text-decoration: none;
-  margin: 15px 0;
-`;
-
-const Button = styled.button`
-  border-radius: 20px;
-  border: 1px solid #617057;
-  background: #617057;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 12px 45px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: transform 80ms ease-in;
-
-  &:active {
-    transform: scale(0.95);
-  }
-`;
-
-const Footer = styled.div`
-	margin-top: 25px;
-	text-align: center;
-`;
+import { BodyStyles, Heading1, Paragraph, Span, Anchor, Button, Footer } from './styles';
 
 function Copyright() {
   return (
