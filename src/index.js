@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css'
-import App from './components/App';
+import AppWithAuth from './components/App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
@@ -10,6 +11,7 @@ import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import 'firebase/auth';
+import { BrowserRouter as Router } from "react-router-dom";
 
 const store = createStore(rootReducer);
 
@@ -24,11 +26,13 @@ const rrfProps = {
 }
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ReactReduxFirebaseProvider {...rrfProps}>
-      <App />
-    </ReactReduxFirebaseProvider>
-  </Provider>,
+  <Router>
+    <Provider store={store}>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <AppWithAuth />
+      </ReactReduxFirebaseProvider>
+    </Provider>
+  </Router>,
   document.getElementById('root')
 )
 
