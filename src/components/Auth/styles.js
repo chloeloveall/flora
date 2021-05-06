@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import LoginImg from '../../img/Asset2.png';
 
-export const BodyStyles = styled.body`
+export const BodyStyles = styled.div`
   font-family: 'Montserrat', sans-serif;
   background: #f5ead8;
   background-image: url(${LoginImg});
