@@ -1,8 +1,6 @@
-![FLora splash page screenshot](src/img/splash-page.png)
+![Flora splash page screenshot](src/img/splash-page.png)
 
-# _Flora: Botanical Companion_
-
-#### _A plant journal database _
+# _Flora: A Botanical Companion_
 
 #### By _**Chloe Loveall**_
 <br>
@@ -13,6 +11,7 @@
 
 1. [Table of Contents](#table-of-contents)
 2. [Description](#description)
+3. [Capstone Proposal](CapstoneProposal.md)
 3. [Preview](#preview)
 4. [Technologies Used](#technologies-used)
 5. [Setup and Installation Requirements](#setup-and-installation-requirements)
@@ -39,6 +38,10 @@
 ## Description
 
 A React project...
+
+## Project Proposal 
+
+[Capstone Project Proposal](project-proposal.md)
 
 ## Preview
 
