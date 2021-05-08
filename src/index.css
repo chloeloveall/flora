@@ -1,4 +1,12 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800'); */
+@import url("https://use.typekit.net/tju5ozw.css");
+
+
+html {
+  /* font-family: orpheuspro, serif; */
+  font-family: orpheuspro, serif;
+  /* font-weight: 900;
+  font-style: normal; */
+}
 
 * {
   box-sizing: border-box;
