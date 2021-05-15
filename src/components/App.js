@@ -1,37 +1,26 @@
 import React from 'react';
-import Login from "./Auth/Login";
-import { BrowserRouter as Switch, Route, withRouter } from "react-router-dom";
-import Header from './Main/Header/Header';
-import firebase from "../firebase";
+import { Route } from 'react-router-dom';
+import Home from './Home/Home';
+import Nav from './NavBar/Nav';
+import PlantDashboard from './PlantDashboard';
+import PlantDetailedPage from './PlantDetailedPage/PlantDetailedPage';
+import PlantForm from './PlantForm';
 
-class App extends React.Component {
-  // execute listener when root component mounts
-  componentDidMount() {
-    //listener detects whether we have a user in our app
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        this.props.history.push('/');
-      }
-    })
-  }
+const App = () => {
+  return (
+    <>
+      <Route exact path ='/' component={Home} />
 
-  render () {
-    return ( 
-      // <Router>
-        <Switch>
-          <Route exact path="/login" component={Login}>
-            <Login />
-          </Route>
-          <Route exact path="/" component={App}>
-            <Header />
-            Home placeholder
-          </Route>
-        </Switch>
-      // </Router>
-    );
-  }
+      <Route path={'/(.+)'} render={() => (
+        <>
+          <Nav />
+          <Route exact path='/plants' component={PlantDashboard} />
+          <Route path='/plants/:id' component={PlantDetailedPage} />
+          <Route path={['/createPlant', '/manage/:id']} component={PlantForm} />
+        </>
+      )} />
+    </>
+  )
 }
 
-const AppWithAuth = withRouter(App);
-
-export default AppWithAuth;
+export default App;
