@@ -235,6 +235,7 @@ Contributions are what make the open source community such an amazing place to b
 * [Choose an open source license](https://choosealicense.com/)
 * [Cloudinary](https://cloudinary.com/)
 * [Coolors.io](coolors.io)
+* [CSS Gradient](https://cssgradient.io/)
 * [Pexels](https://www.pexels.com/)
 * [Postmodernist Ipsum](https://www.elsewhere.org/pomo/)
 * [Shields](https://shields.io/)
