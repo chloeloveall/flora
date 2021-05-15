@@ -1,57 +1,30 @@
 import React from 'react';
-// import styled from 'styled-components';
-// import MainImg from '../../img/main-abstract-copy.png';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import ZoomedAnimation from './ZoomedAnimation';
-import Header from '../Header/Header';
+import { Button, Container, Header, Icon, Segment } from 'semantic-ui-react';
 
-// const Background = styled.div`
-// background-image: url(${MainImg});
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   min-height: 100vh;
-// `;
-
-const Home = () => {
+const Gradient = {
+  // backgroundImage: 'linear-gradient(135deg, rgb(61, 70, 69) 0%, rgb(105, 119, 83) 69%, rgb(157, 171, 135) 89%)',
+  backgroundImage: 'radial-gradient(circle, rgba(173,186,152,1) 0%, rgba(49,68,40,1) 100%)',
+  height: '100vh',
+  paddingTop: '75px'
+}
+const Home = ({history}) => {
   return (
     <>
-    <Header />
-    {/* <ZoomedAnimation /> */}
-    {/* <Background></Background> */}
-      {/* <Parallax pages={4} style={{ top: '0', left: '0' }}>
-        <ParallaxLayer offset={0} style={{ zIndex: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Header />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={2}
-          speed={2.5}
-          style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-          >
-          <p>Scroll down</p>
-          <ZoomedAnimation />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={1} speed={2} style={{ backgroundColor: '#ff6d6d' }} />
-
-        <ParallaxLayer horizontal offset={1} speed={20} style={{ zIndex: 2, backgroundColor: '#000000' }}>
-          <p>Some text will go here...</p>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={1}
-          speed={0.5}
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: 'white',
-          }}>
-          <p>Scroll up</p>
-        </ParallaxLayer>
-      </Parallax> */}
+      <Segment style={Gradient} inverted textAlign='center' vertical>
+        <Container>
+          <Header as='h1' inverted>
+            <Icon name='leaf' />
+            Flora: A Botanical Companion
+          </Header>
+          <Button onClick={() => history.push('/plants')} inverted >
+            Get Started
+            <Icon name='right arrow' inverted/>
+          </Button>
+        </Container>
+      </Segment>
     </>
-  );
+  )
 }
 
 export default Home;
+
