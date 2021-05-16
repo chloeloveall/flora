@@ -54,6 +54,7 @@ Deployed on [Vercel](https://vercel.com)
 * Adobe XD
 * Bootstrap
 * CSS
+* Formik 
 * HTML
 * JavaScript
 * Materials-UI
@@ -61,8 +62,9 @@ Deployed on [Vercel](https://vercel.com)
 * npm
 * React
   * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+* React Spring
 * Semantic UI
-* STyled Components
+* Styled Components
 
 ## Setup and Installation Requirements
 
