@@ -1,7 +1,48 @@
 import * as c from './ActionTypes';
+import { fetchSampleData } from '../components/Data/mockAPI';
+import firebase from '../firebase-firestore/firebase';
 
-// import { CREATE_PLANT, DELETE_PLANT, UPDATE_PLANT } from "./plantConstants";
+export function loadPlants() {
+  return async function(dispatch) {
+    dispatch(asyncActionStart());
+    try {
+      const plants = await fetchSampleData();
+      dispatch({type: c.FETCH_PLANTS, payload: plants});
+      dispatch(asyncActionFinish());
+    } catch (error) {
+      dispatch(asyncActionError(error));
+    }
+  }
+}
 
+export function listenToPlants(plants) {
+  return {
+    type: c.FETCH_PLANTS,
+    payload: plants
+  }
+}
+
+// async actions
+export function asyncActionStart() {
+  return {
+    type: c.ASYNC_ACTION_START
+  }
+}
+
+export function asyncActionFinish() {
+  return {
+    type: c.ASYNC_ACTION_FINISH
+  }
+}
+
+export function asyncActionError(error) {
+  return {
+    type: c.ASYNC_ACTION_ERROR,
+    payload: error
+  }
+}
+
+// plant CRUD actions
 export function createPlant(plant) {
   return {
     type: c.CREATE_PLANT,
@@ -23,46 +64,47 @@ export function deletePlant(plantId) {
   }
 }
 
-// import * as c from './ActionTypes';
+//sign in and sign out actions
+export function signInUser(user) {
+  return {
+    type: c.SIGN_IN_USER,
+    payload: user
+  }
+}
 
-// export const deletePlant = id => ({
-//   type: c.DELETE_PLANT,
-//   id
-// });
+export function verifyAuth() {
+  return function(dispatch) {
+    return firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        dispatch(signInUser(user))
+        dispatch({type: c.APP_LOADED})
+      } else {
+        dispatch(signOutUser())
+        dispatch({type: c.APP_LOADED})
+      }
+    })
+  }
+}
 
-// export const toggleForm = () => ({
-//   type: c.TOGGLE_FORM
-// });
+export function signOutUser() {
+  return {
+    type: c.SIGN_OUT_USER,
+  }
+}
 
-// // export const addPlant = (plant) => {
-// //   const { plantType, plantName, location, acquired, notes, wateringSchedule, fertilizationSchedule, mistingSchedule, id } = plant;
-// //   return {
-// //     type: c.ADD_PLANT,
-// //     plantType: plantType,
-// //     plantName: plantName,
-// //     location: location,
-// //     acquired: acquired,
-// //     notes: notes,
-// //     wateringSchedule: wateringSchedule,
-// //     fertilizationSchedule: fertilizationSchedule,
-// //     mistingSchedule: mistingSchedule,
-// //     id: id,
-// //   }
-// // }
+// modal control actions 
+export function openModal(payload) {
+  return {
+    type: c.OPEN_MODAL,
+    payload
+  }
+}
 
-// export const nullifyPlant = id => ({
-//   type: c.MAKE_NULL,
-//   id
-// });
-
-// export const selectPlant = id => ({
-//   type: c.SELECT_PLANT,
-//   id
-// });
-
-// export const setEdit = () => ({
-//   type: c.SET_EDIT,
-// });
+export function closeModal() {
+  return {
+    type: c.CLOSE_MODAL,
+  }
+}
 
 // // weather app actions 
 // export const requestForecast = () => ({
