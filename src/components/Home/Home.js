@@ -20,7 +20,8 @@ const Centered = {
   left: '50%',
   transform: 'translate(-50%, -50%)'
 }
-const Home = (props) => {
+
+function Home(props) {
   return (
     <div>
       <Segment style={LandingBackground} textAlign='center' vertical>
