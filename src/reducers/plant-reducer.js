@@ -1,8 +1,7 @@
-import { SampleData } from '../components/SampleData';
 import * as c from '../actions/ActionTypes';
 
 const initialState = {
-  plants: SampleData
+  plants: [],
 }
 
 export default function plantReducer(state = initialState, {type, payload}) {
@@ -21,6 +20,11 @@ export default function plantReducer(state = initialState, {type, payload}) {
       return {
         ...state,
         plants: [...state.plants.filter(plant => plant.id !== payload)]
+      }
+    case c.FETCH_PLANTS:
+      return {
+        ...state,
+        plants: payload
       }
     default:
       return state;
