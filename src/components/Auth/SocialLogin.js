@@ -27,6 +27,20 @@ export default function SocialLogin() {
         color='google plus' 
         style={{marginBottom: 10}} 
         content='Login with Google'/>
+        <Button 
+        icon='twitter' 
+        onClick={() => handleSocialLogin('twitter')}
+        fluid 
+        color='twitter' 
+        style={{marginBottom: 10}} 
+        content='Login with Twitter'/>
+        <Button 
+        icon='github' 
+        onClick={() => handleSocialLogin('github')}
+        fluid 
+        color='black' 
+        style={{marginBottom: 10}} 
+        content='Login with GitHub'/>
     </>
   )
 }
