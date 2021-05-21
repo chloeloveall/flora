@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Button } from 'semantic-ui-react';
 import { socialLogin } from '../../firebase-firestore/firebaseService';
 import { closeModal } from '../../actions/index';
+import { ErrorsAndButtonMargin } from './styles';
 
 export default function SocialLogin() {
   const dispatch = useDispatch();
@@ -11,36 +12,41 @@ export default function SocialLogin() {
     dispatch(closeModal());
     socialLogin(provider);
   }
+  
   return (
     <>
-      <Button 
-        icon='facebook' 
-        onClick={() => handleSocialLogin('facebook')}
-        fluid 
-        color='facebook' 
-        style={{marginBottom: 10}} 
-        content='Login with Facebook'/>
-      <Button 
-        icon='google' 
-        onClick={() => handleSocialLogin('google')}
-        fluid 
-        color='google plus' 
-        style={{marginBottom: 10}} 
-        content='Login with Google'/>
+      <ErrorsAndButtonMargin>
+        <Button 
+          icon='facebook' 
+          onClick={() => handleSocialLogin('facebook')}
+          fluid 
+          basic
+          content='Login with Facebook'/>
+      </ErrorsAndButtonMargin>
+      <ErrorsAndButtonMargin>
+        <Button 
+          icon='google' 
+          onClick={() => handleSocialLogin('google')}
+          fluid 
+          basic
+          content='Login with Google'/>
+      </ErrorsAndButtonMargin>
+      <ErrorsAndButtonMargin>
         <Button 
         icon='twitter' 
         onClick={() => handleSocialLogin('twitter')}
         fluid 
-        color='twitter' 
-        style={{marginBottom: 10}} 
+        basic
         content='Login with Twitter'/>
+      </ErrorsAndButtonMargin>
+      <ErrorsAndButtonMargin>
         <Button 
         icon='github' 
         onClick={() => handleSocialLogin('github')}
         fluid 
-        color='black' 
-        style={{marginBottom: 10}} 
+        basic
         content='Login with GitHub'/>
+      </ErrorsAndButtonMargin>
     </>
   )
 }

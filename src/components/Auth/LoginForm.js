@@ -8,6 +8,7 @@ import { Button, Divider, Label } from 'semantic-ui-react';
 import { closeModal } from '../../actions/index';
 import { signInWithEmail } from '../../firebase-firestore/firebaseService';
 import SocialLogin from './SocialLogin';
+import { ErrorsAndButtonMargin } from './styles';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -36,17 +37,17 @@ export default function LoginForm() {
           <Form className='ui form'>
             <ReusableTextInput name='email' placeholder='Email Address'/>
             <ReusableTextInput name='password' placeholder='Password' type='password'/>
-            {errors.auth && <Label basic color='red' style={{marginBottom: 10}} content={errors.auth} />}
+            <ErrorsAndButtonMargin>
+              {errors.auth && <Label basic color='red' content={errors.auth} />}
+            </ErrorsAndButtonMargin>
             <Button 
               loading={isSubmitting}
               disabled={!isValid || !dirty || isSubmitting}
               type='submit'
               fluid
               size='large'
-              color='teal'
               content='Login'
             />
-
             <Divider horizontal>Or</Divider>
             <SocialLogin />
           </Form>
