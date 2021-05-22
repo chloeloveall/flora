@@ -1,0 +1,1 @@
+export const welcomeListData = ['Pothos.', 'Alocasia.', 'Syngonium.', 'Dracaena.', 'Hoya.', 'Sansevieria.', 'Fiddle Leaf.', 'Monstera.', 'Echeveria.', 'Philodendron.', 'Aloe.', 'Haworthia', 'Croton.', 'Peperomia.', 'Ficus.', 'Schefflera.', 'Calathea.', 'Pilea.', 'Begonia.', ];
