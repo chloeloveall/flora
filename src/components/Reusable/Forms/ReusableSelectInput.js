@@ -2,7 +2,7 @@ import React from 'react';
 import { useField } from 'formik';
 import { FormField, Label, Select } from 'semantic-ui-react';
 
-const ReusableSelectInput = ({ label, ...props}) => {
+export default function ReusableSelectInput({ label, ...props}) {
   const [field, meta, helpers] = useField(props);
 
   return (
@@ -19,7 +19,5 @@ const ReusableSelectInput = ({ label, ...props}) => {
         <Label basic color='red'>{meta.error}</Label>
       ) : null}
     </FormField>
-  )
+  );
 }
-
-export default ReusableSelectInput;

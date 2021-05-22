@@ -2,7 +2,7 @@ import React from 'react';
 import { useField } from 'formik';
 import { FormField, Label } from 'semantic-ui-react';
 
-const ReusableTextArea = ({ label, ...props}) => {
+export default function ReusableTextArea({ label, ...props}) {
   const [field, meta] = useField(props);
 
   return (
@@ -13,7 +13,5 @@ const ReusableTextArea = ({ label, ...props}) => {
         <Label basic color='red'>{meta.error}</Label>
       ) : null}
     </FormField>
-  )
+  );
 }
-
-export default ReusableTextArea;

@@ -4,7 +4,7 @@ import { FormField, Label } from 'semantic-ui-react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const ResusableDateInput = ({ label, ...props}) => {
+export default function ResusableDateInput({ label, ...props}) {
   const {setFieldValue} = useFormikContext();
   const [field, meta] = useField(props);
 
@@ -21,7 +21,5 @@ const ResusableDateInput = ({ label, ...props}) => {
         <Label basic color='red'>{meta.error}</Label>
       ) : null}
     </FormField>
-  )
+  );
 }
-
-export default ResusableDateInput;
