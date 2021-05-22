@@ -54,6 +54,9 @@ Deployed on [Vercel](https://vercel.com)
 * Adobe XD
 * Bootstrap
 * CSS
+* date-fns
+* Firebase
+* Firestore
 * Formik 
 * HTML
 * JavaScript
@@ -62,9 +65,15 @@ Deployed on [Vercel](https://vercel.com)
 * npm
 * React
   * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+* React Datepicker
+* React-Redux
+* React-Router
 * React Spring
+* Redux 
 * Semantic UI
 * Styled Components
+* Toastify
+* Yup
 
 ## Setup and Installation Requirements
 
